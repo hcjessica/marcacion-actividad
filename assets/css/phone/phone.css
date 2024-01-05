@@ -1,0 +1,142 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;/*setear 10px por default*/
+}
+:root{
+    --fontsize-h1: 2.7rem;
+    --fontsize-h3: 2.2rem;
+    --fontsize-texto: 2rem;
+    --fontfamily-titulos: 'Fraunces', serif;
+    --primary-color: #09f;
+    --secondary-color: #ff3c66;
+    --third-color: white;
+    --fourth-color: black;
+    --fifth-color: rgb(255, 72, 0);
+    --lightwhite-color: whitesmoke;
+}
+body{
+    background-color: lavender;
+}
+.header__titulo,
+.section__subtitulo
+{
+    font-family: var(--fontfamily-titulos);
+}
+.header__titulo{   
+    margin-bottom: 0.5rem;;
+    font-size: var(--fontsize-h1);
+    font-style: italic;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--primary-color);
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.section{
+    width: 90%;
+}
+.section__subtitulo{
+    font-size: var(--fontsize-h3);
+    font-weight: 600;
+    text-align: start;
+    color: var(--secondary-color);
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.6rem 1.2rem;
+    border: 0.2rem dashed var(--fourth-color);
+    background-color: var(--lightwhite-color);
+}
+.form__lbl{
+    padding: 0.4rem 1.2rem;
+    font-size: var(--fontsize-texto);
+    color:var(--third-color);
+    background-color: var(--fourth-color);
+    border-radius: 0.5rem;
+}
+.form__lbl--marcacion{
+    width: fit-content;
+}
+.form__dato,
+.form__guion{
+    font-size: var(--fontsize-texto);
+}
+.form__dato--active:active{
+    border: 0.2rem solid var(--fifth-color);
+}
+.form__bloque1, 
+.form__bloque2, 
+.form__bloque3, 
+.form__bloque4,
+.form__bloque5,
+.form__bloque6{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.form__bloque7{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.form__dato--categoria{
+    padding: 0.4rem 1.2rem;
+    color: var(--third-color);
+    background-color: var(--fifth-color);
+}
+.form__dato--nromarcacion,
+.form__dato--categoria
+{
+    font-weight: bold;
+}
+.form__dato--diamarcacion,
+.form__dato--horainicio,
+.form__dato--horatermino{
+    text-align: center;
+}
+.form__dato--descripcion{
+    height: 7rem;
+    width: 100%;
+}
+.form__dato--diamarcacion,
+.form__dato--descripcion,
+.form__dato--horainicio,
+.form__dato--horatermino{
+    color: blue;
+}
+.form__btnmarcar{
+    margin-top: 0.8rem;
+    padding: 1rem 1.5rem;
+    align-self: center;
+    border: none;
+    border-radius: 0.8rem;
+    font-family: var(--fontfamily-titulos);
+    font-size: var(--fontsize-texto);
+    text-transform: capitalize;
+    color: var(--third-color);
+}
+.form__btnmarcar--rojo{
+    background-color: red;
+}
+.form__btnmarcar--verde{
+    background-color: green;
+}
+.form__btnmarcar--hover:hover{
+    cursor: pointer;
+    background-color: var(--fourth-color);
+    color: var(--third-color);    
+}
