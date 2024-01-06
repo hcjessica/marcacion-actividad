@@ -5,6 +5,8 @@ class Marcacion extends CI_Controller {
 
 	public function index()
 	{
+		date_default_timezone_set("America/Bogota");
+
 		$data = new stdClass();
 		$data->title = "Marcación de Actividades";
 		$data->recursoscss = ["phone/phone.css", "tablet/tablet.css", "desktop/desktop.css"];

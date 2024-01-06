@@ -4,6 +4,12 @@
     justify-content: space-around;
     margin-bottom: 3rem;
 }
+.main__ultimoreg{
+    order: 2;
+}
+.main__nuevaact{
+    order: 1;
+}
 .section{
     width: 40%;
 }
