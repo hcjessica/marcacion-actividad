@@ -27,4 +27,8 @@ class Model_CategoriaActividad extends CI_Model{
             return null;
         }
     }
+
+    public function getError() {
+        return $this->error;
+    }
 }

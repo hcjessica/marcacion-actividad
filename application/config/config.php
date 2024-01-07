@@ -23,6 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+#updated
 $config['base_url'] = 'http://127.0.0.1/marcacion-actividad/';
 
 /*
@@ -35,6 +36,7 @@ $config['base_url'] = 'http://127.0.0.1/marcacion-actividad/';
 | variable so that it is blank.
 |
 */
+#updated
 $config['index_page'] = '';
 
 /*

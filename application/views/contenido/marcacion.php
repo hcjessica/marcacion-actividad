@@ -34,7 +34,7 @@
     <section class="main__nuevaact section">
         <!--Bloque 2: Nuevo registro de marcación-->
         <h3 class="section__subtitulo">NUEVA ACTIVIDAD</h3>
-        <form class="section__form form" id="formnuevo">
+        <form class="section__form form" id="formnuevo" method="post">
             <div class="form__bloque5">
                 <label class="form__lbl" for="slct_categoria">Categoría: <span class="form__spanrequired">*</span></label>
                 <select class="form__dato" title="Categorías de actividades" id="slct_categoria">
