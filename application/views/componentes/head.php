@@ -11,7 +11,8 @@
         <meta name="author" content="Fabiola Jessica Huancollo Chambi">
         <link rel="shortcut icon" href="<?php echo base_url('assets/img/ic-logo-app.png'); ?>">
         <link rel="stylesheet" href="<?php echo base_url('assets/librerias/normalize/normalize.css'); ?>">
-
+        <link rel="stylesheet" href="<?php echo base_url('assets/librerias/zebra_dialog/dist/css/flat/zebra_dialog.min.css'); ?>">
+        
         <?php
         $contador = 0;
         if(isset($recursoscss)){
