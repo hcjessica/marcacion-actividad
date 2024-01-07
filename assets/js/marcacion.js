@@ -6,6 +6,7 @@ $(document).ready(function(){
     //hora tiempo real
     setInterval(horaTiempoReal, 60000);
 });
+
 function horaTiempoReal(){
     let hora = new Date();
     let horas = hora.getHours();
@@ -13,9 +14,10 @@ function horaTiempoReal(){
 
     if (minutos <= 9)
         minutos = "0" + minutos
-        cargarCategoriasActividades
+
     $("#horaini_marcacion").val(horas +":"+ minutos);
 }
+
 cargarCategoriasActividades = (idEstado) =>{
     $.ajax({
         url: path + "CategoriaActividad/getAllCategoriaActividadXEstado",
@@ -26,7 +28,7 @@ cargarCategoriasActividades = (idEstado) =>{
         success: function(data){
             let slctCategoria = $("#slct_categoria");
             slctCategoria.find("option").remove();
-            slctCategoria.append("<option disabled selected>Seleccione una opción</option>");
+            slctCategoria.append("<option disabled selected value=''>Seleccione una opción</option>");
             
             let datos = JSON.parse(data);
             if(datos.respuesta == "success"){
@@ -39,7 +41,7 @@ cargarCategoriasActividades = (idEstado) =>{
                 }
             }else{
                 new $.Zebra_Dialog(
-                    datos.errores,
+                    ''+datos.errores+'',
                     {
                         type: "error",
                         title: "Error"
@@ -48,4 +50,49 @@ cargarCategoriasActividades = (idEstado) =>{
             }
         }
     });
+}
+
+$("#btn-marcarinicio").click(function(){
+    let slct_categoria = $("#slct_categoria").val();
+    let fec_marcacion = $("#fec_marcacion").val();
+    let descrip_act = $("#descrip_act").val();
+    let horaini_marcacion = $("#horaini_marcacion").val();
+
+    $.ajax({
+        url: path + "Marcacion/registrar",
+        type: "POST",
+        data:{
+            slct_categoria: slct_categoria,
+            fec_marcacion: fec_marcacion,
+            descrip_act: descrip_act,
+            horaini_marcacion: horaini_marcacion
+        },
+        success: function(data){
+            let datos = JSON.parse(data);
+            if(datos.respuesta == "success"){
+                new $.Zebra_Dialog(
+                    "Se ha registrado exitosamente la marcación de inicio de la actividad",
+                    {
+                        type: "confirmation",
+                        title: "Confirmación"
+                    }
+                );
+                limpiarCamposRegistro();
+            }else{
+                new $.Zebra_Dialog(
+                    ''+datos.errores+'',
+                    {
+                        type: "error",
+                        title: "Error"
+                    }
+                );
+            }
+        }
+    });
+});
+
+limpiarCamposRegistro = () =>{
+    $("#slct_categoria").val("");
+    $("#descrip_act").val("");
+    $("#btn-marcarinicio").attr("hidden","");
 }

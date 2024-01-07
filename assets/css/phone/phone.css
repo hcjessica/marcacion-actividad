@@ -42,6 +42,7 @@ body{
 }
 .section{
     width: 90%;
+    max-width: 498px;
 }
 .section__subtitulo{
     font-size: var(--fontsize-h3);
