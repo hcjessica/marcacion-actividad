@@ -38,8 +38,6 @@
             <div class="form__bloque5">
                 <label class="form__lbl" for="slct_categoria">Categoría: <span class="form__spanrequired">*</span></label>
                 <select class="form__dato" title="Categorías de actividades" id="slct_categoria">
-                    <option disabled selected>Seleccione una opción</option>
-                    <option value="1">Freelance</option>
                 </select>
             </div>
             <div class="form__bloque6">
